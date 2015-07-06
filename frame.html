@@ -2,7 +2,17 @@
   <body>
     <script>
       function validate() {
-        alert('hi');
+        var iframe1 = document.getElementById('frame1').contentDocument;
+        var firstname = iframe1.getElementById('firstname').value;
+        var lastname = iframe1.getElementById('lastname').value;
+        var iframe2 = document.getElementById('frame2').contentDocument;
+        var address1 = iframe2.getElementById('address1').value;
+        var address2 = iframe2.getElementById('address2').value;
+        if (firstname == '' || lastname == '' || address1 == '' || address2 == '') {
+          document.getElementById('message').innerText = 'Please fill all details.';
+        } else {
+          document.getElementById('message').innerText = 'Information submitted.';
+        }
       }
     </script>
 <iframe id="frame1" src="frame1.html"></iframe>
